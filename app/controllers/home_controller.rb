@@ -23,7 +23,7 @@ class HomeController < ApplicationController
       if params[:function]
         @formula = params[:function][:formula]
       else
-        @formula = "bm25"
+        @formula = "covered_query_term_ratio"
       end
     end
 

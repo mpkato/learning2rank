@@ -3,10 +3,10 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-role :app, %w{deploy@learning2rank.mpkato.net}
-role :web, %w{deploy@learning2rank.mpkato.net}
-role :db,  %w{deploy@learning2rank.mpkato.net}
-server 'learning2rank.mpkato.net', user: 'deploy', roles: %w{web app db}
+role :app, %w{deploy@clusty.mpkato.net}
+role :web, %w{deploy@clusty.mpkato.net}
+role :db,  %w{deploy@clusty.mpkato.net}
+server 'clusty.mpkato.net', user: 'deploy', roles: %w{web app db}
 
 set :ssh_options, {
   keys: [File.expand_path('~/.ssh/learning2rank_rsa')],
