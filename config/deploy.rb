@@ -2,10 +2,10 @@
 lock '3.4.0'
 set :default_stage, "production"
 
-set :application, 'clusty'
-set :repo_url, 'git@github.com:mpkato/clusty.git'
+set :application, 'learning2rank'
+set :repo_url, 'git@github.com:mpkato/learning2rank.git'
 
-set :deploy_to, '/var/www/clusty'
+set :deploy_to, '/var/www/learning2rank'
 set :scm, :git
 set :use_sudo, false
 set :log_level, :debug

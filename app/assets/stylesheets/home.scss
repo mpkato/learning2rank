@@ -1,3 +1,29 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+td.qid {
+  font-size: 32px;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+td.result {
+  font-size: 32px;
+  font-weight: bold;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+td.score {
+  font-size: 24px;
+  text-align: center !important;
+}
+
+div.performance {
+  font-size: 24px;
+}
+
+span.performance {
+  font-size: 54px;
+}

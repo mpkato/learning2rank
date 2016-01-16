@@ -1,0 +1,45 @@
+%h1 Your performance
+%div{class: "text-center performance"}
+  %span.correct_number
+    = @total_correct_count
+  %span.total_number
+    = " / #{@total_pair_count} = "
+  %span.performance
+    = "#{(@total_correct_count.to_f / @total_pair_count * 100).round(3)}%"
+  %span
+
+%h2 Your scoring function
+= form_for(:function, url: home_index_path, method: :get) do |f|
+  - unless @error.nil?
+    %div{class: "error_explanation text-danger"}
+      %h2=@error
+  %div.row
+    %div.col-lg-10
+      = f.text_field :formula, class: "form-control", value: @formula
+    %div.col-lg-2
+      = f.submit "Submit", class: "btn btn-primary btn-block"
+
+%h2 Document pairs
+%div.text-center
+  = paginate @pairs
+%table.table
+  %thead
+    %th Pair ID
+    %th Must Be Better
+    %th
+    %th Must Be Worse
+  %tbody
+    - @pairs.each do |pair|
+      - scores = pair.map {|d| d.score(@formula)}
+      %tr
+        %td.qid{rowspan: 2}="#{pair.first.id}-#{pair.last.id}"
+        - pair.each_with_index do |document, idx|
+          %td=render partial: "feature", locals: {vector: document.sub_vector}
+          - if idx == 0
+            %td{class: "result" + is_success(scores), rowspan: 2}=is_bigger(scores)
+      %tr
+        - scores.each do |score|
+          %td.score=score
+
+%div.text-center
+  = paginate @pairs

@@ -1,0 +1,8 @@
+%table.table
+  %thead
+    %th{colspan: 2} Features
+  %tbody
+    - Document::DIMS.keys.sort_by {|k| Document::DIMS[k]}.each do |key|
+      %tr
+        %th=key
+        %td=vector[key]
