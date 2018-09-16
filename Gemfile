@@ -59,7 +59,7 @@ gem 'less-rails'
 # devise
 gem 'devise'
 gem 'devise-bootstrap-views'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin'
 
 # test
 group :development, :test do

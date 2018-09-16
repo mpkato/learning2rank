@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.11.0'
 set :default_stage, "production"
 
 set :application, 'learning2rank'
